@@ -3,7 +3,7 @@ from bcc import BPF
 from time import sleep
 
 program = r"""
-BPF_HASH(counter_table);
+BPF_HASH(counter_table);  #Creates a hash table, which stores key-value pairs, The keys will be user IDs, and the value is a counter that gets incremented whenever the eBPF program is run.
 
 int hello(void *ctx) {
    u64 uid;
